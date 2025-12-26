@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sử Việt Hào Hùng - Trang Chủ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="common.css">
 </head>
+
 <body>
     <header>
         <div class="container header-content">
@@ -39,7 +43,6 @@
     <div id="mobile-overlay" onclick="closeMobileMenu()"></div>
 
     <nav id="mobile-menu">
-        <a onclick="navigateTo('index')"><i class="fas fa-home"></i> Trang chủ</a>
         <a onclick="navigateTo('gioi-thieu')"><i class="fas fa-info-circle"></i> Giới thiệu</a>
         <a onclick="navigateTo('nien-bieu')"><i class="fas fa-calendar-alt"></i> Niên biểu</a>
         <a onclick="navigateTo('nhan-vat')"><i class="fas fa-user-shield"></i> Nhân vật</a>
@@ -58,10 +61,13 @@
             <div class="container text-center">
                 <div class="hero-badge">Hào Khí Ngàn Năm</div>
                 <h1>Khám Phá Dòng Máu Lạc Hồng</h1>
-                <p>Hành trình ngược dòng thời gian để hiểu về cội nguồn, văn hóa và những trang sử oai hùng của dân tộc Việt Nam.</p>
+                <p>Hành trình ngược dòng thời gian để hiểu về cội nguồn, văn hóa và những trang sử oai hùng của dân tộc
+                    Việt Nam.</p>
                 <div class="hero-btns">
                     <button class="btn-auth btn-register" onclick="navigateTo('nien-bieu')">BẮT ĐẦU NGAY</button>
-                    <button class="btn-auth btn-login" style="background: white; color: var(--primary-navy); border: none;" onclick="navigateTo('gioi-thieu')">TÌM HIỂU THÊM</button>
+                    <button class="btn-auth btn-login"
+                        style="background: white; color: var(--primary-navy); border: none;"
+                        onclick="navigateTo('gioi-thieu')">TÌM HIỂU THÊM</button>
                 </div>
             </div>
         </section>
@@ -81,7 +87,7 @@
                     <span class="stat-label">Trận Đánh Oai Hùng</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-num">63</span>
+                    <span class="stat-num">34</span>
                     <span class="stat-label">Tỉnh Thành Văn Hóa</span>
                 </div>
             </div>
@@ -98,21 +104,45 @@
                 <p>Dân ta phải biết sử ta - Cho tường gốc tích nước nhà Việt Nam.</p>
             </div>
         </div>
-        <div class="copyright">© 2025 Sử Việt Hào Hùng. Thiết kế bởi Sếp.</div>
+        <div class="copyright">© 2025 Sử Việt Hào Hùng. Thiết kế bởi Minh 9/1.</div>
     </footer>
 
-    <div id="auth-modal" class="modal-overlay" onclick="handleOutsideClick(event)">
+    <div id="auth-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="close-modal" onclick="closeAuthModal()">&times;</button>
+
+            <!-- LOGIN FORM -->
             <div id="login-form">
                 <h2>Đăng Nhập</h2>
                 <input type="text" placeholder="Tên đăng nhập" class="auth-input">
                 <input type="password" placeholder="Mật khẩu" class="auth-input">
-                <button class="btn-auth btn-register" style="width: 100%;">VÀO TRANG</button>
+                <button class="btn-auth btn-register" style="width:100%">THAM GIA</button>
+
+                <p class="auth-switch">
+                    Chưa có tài khoản?
+                    <a href="#" onclick="switchForm('reg')">Đăng ký ngay</a>
+                </p>
             </div>
+
+            <!-- REGISTER FORM -->
+            <div id="register-form" style="display:none">
+                <h2>Đăng Ký</h2>
+                <input type="text" placeholder="Tên người dùng" class="auth-input">
+                <input type="email" placeholder="Email" class="auth-input">
+                <input type="password" placeholder="Mật khẩu" class="auth-input">
+                <input type="password" placeholder="Nhập lại mật khẩu" class="auth-input">
+                <button class="btn-auth btn-register" style="width:100%">TẠO TÀI KHOẢN</button>
+
+                <p class="auth-switch">
+                    Đã có tài khoản?
+                    <a href="#" onclick="switchForm('login')">Đăng nhập ngay</a>
+                </p>
+            </div>
+
         </div>
     </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>

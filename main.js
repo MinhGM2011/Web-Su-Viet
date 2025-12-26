@@ -39,6 +39,12 @@ function openAuthModal(type) {
 function closeAuthModal() {
     document.getElementById('auth-modal').style.display = 'none';
     document.body.style.overflow = 'auto';
+    document.getElementById('auth-modal').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closeAuthModal();
+        }
+    });
+
 }
 
 function switchForm(form) {
