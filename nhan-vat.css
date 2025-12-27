@@ -1,0 +1,170 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #0b1220; /* nền đen toàn trang */
+    min-height: 100%;
+}
+
+/* =========================
+   NHÂN VẬT – DARK MODE
+========================= */
+
+.nhan-vat-dark {
+    background: linear-gradient(180deg, #0b1220, #111827);
+    min-height: calc(100vh - 80px); /* trừ chiều cao header */
+    padding: 120px 60px 100px;
+    border-radius: 0; /* BỎ BO GÓC */
+}
+
+
+/* Header */
+.nhan-vat-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nhan-vat-header h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #facc15;
+    text-shadow: 0 2px 10px rgba(250, 204, 21, 0.25);
+}
+
+
+.nhan-vat-header p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+
+/* Search */
+.search-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 480px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid #facc15;
+    color: #fff;
+    outline: none;
+}
+
+.search-box::placeholder {
+    color: #9ca3af;
+}
+
+/* Grid */
+.char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+/* Card */
+.hero-card {
+    position: relative;
+    height: 420px;
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #1f2933;
+    border: 2px solid rgba(250, 204, 21, 0.25);
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hero-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) brightness(0.75);
+    transition: 0.5s;
+}
+
+/* Overlay */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.9) 15%,
+        rgba(0,0,0,0.4) 50%,
+        transparent 100%
+    );
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-name {
+    font-size: 1.6rem;
+    color: #facc15;
+    transform: translateY(20px);
+    transition: 0.4s;
+}
+
+.hero-title {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+    transition: 0.45s;
+}
+
+.hero-desc {
+    font-size: 0.85rem;
+    color: #e5e7eb;
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.45s;
+}
+
+/* Badge */
+.hero-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #facc15;
+    color: #111827;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    z-index: 5;
+}
+
+/* Hover */
+.hero-card:hover {
+    transform: translateY(-14px) scale(1.04);
+    border-color: #facc15;
+    box-shadow: 0 0 35px rgba(250, 204, 21, 0.4);
+}
+
+.hero-card:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1);
+}
+
+.hero-card:hover .hero-name,
+.hero-card:hover .hero-title {
+    transform: translateY(0);
+}
+
+.hero-card:hover .hero-desc {
+    opacity: 1;
+    max-height: 120px;
+}

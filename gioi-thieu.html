@@ -1,179 +1,181 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sử Việt Hào Hùng - Giới thiệu</title>
     <!-- Font chữ Google: Merriweather cho cảm giác lịch sử, Roboto cho hiện đại -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <!-- Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Common CSS -->
     <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="gioi-thieu.css">
 </head>
-<body class="antialiased text-gray-800">
 
-    <!-- HEADER -->
-    <header class="w-full">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('index')">
-                <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-red-700 font-bold text-xl border-2 border-white shadow-lg">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="text-xl md:text-2xl font-bold tracking-wide brand-font text-white">
-                    Sử Việt <span class="text-yellow-400">Hào Hùng</span>
-                </div>
+<body class="page-gioi-thieu">
+    <header>
+        <div class="container header-content">
+            <div class="logo" onclick="navigateTo('index')">
+                <span class="logo-text-top"><i class="fas fa-dragon"></i> Sử Việt</span>
+                <span class="logo-text-bottom">Hào Hùng</span>
             </div>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex space-x-6 font-medium text-sm lg:text-base">
-                <a onclick="navigateTo('index')" class="nav-link" id="nav-index">Trang chủ</a>
-                <a onclick="navigateTo('gioi-thieu')" class="nav-link active" id="nav-gioi-thieu">Giới thiệu</a>
-                <a onclick="navigateTo('nien-bieu')" class="nav-link" id="nav-nien-bieu">Niên biểu</a>
-                <a onclick="navigateTo('nhan-vat')" class="nav-link" id="nav-nhan-vat">Nhân vật</a>
-                <a onclick="navigateTo('su-kien')" class="nav-link" id="nav-su-kien">Sự kiện</a>
-                <a onclick="navigateTo('tai-nguyen')" class="nav-link" id="nav-tai-nguyen">Tài nguyên</a>
-                <a onclick="navigateTo('xep-hang')" class="nav-link" id="nav-xep-hang">Bảng vàng</a>
-                <a onclick="navigateTo('trac-nghiem')" class="nav-link" id="nav-trac-nghiem">Trắc nghiệm</a>
+            <nav class="desktop-nav">
+                <a onclick="navigateTo('gioi-thieu')" class="nav-link">Giới thiệu</a>
+                <a onclick="navigateTo('nien-bieu')" class="nav-link">Niên biểu</a>
+                <a onclick="navigateTo('nhan-vat')" class="nav-link">Nhân vật</a>
+                <a onclick="navigateTo('su-kien')" class="nav-link">Sự kiện</a>
+                <a onclick="navigateTo('tai-nguyen')" class="nav-link">Tài nguyên</a>
+                <a onclick="navigateTo('xep-hang')" class="nav-link">Bảng vàng</a>
+                <a onclick="navigateTo('trac-nghiem')" class="nav-link">Trắc nghiệm</a>
+                <a onclick="navigateTo('quan-tri')" class="nav-link">Quản trị</a>
+                <div class="auth-btns">
+                    <button class="btn-auth btn-login" onclick="openAuthModal('login')">Đăng nhập</button>
+                    <button class="btn-auth btn-register" onclick="openAuthModal('register')">Đăng ký</button>
+                </div>
             </nav>
 
-            <!-- Buttons & Mobile Toggle -->
-            <div class="flex items-center space-x-4">
-                <div class="hidden md:flex space-x-2">
-                    <button onclick="openModal()" class="px-4 py-2 text-sm text-yellow-400 border border-yellow-400 rounded hover:bg-yellow-400 hover:text-red-800 transition">Đăng nhập</button>
-                    <button onclick="openRegisterModal()" class="px-4 py-2 text-sm text-white font-bold rounded shadow-lg btn-register">Đăng ký</button>
-                </div>
-                <!-- Admin shortcut for Boss -->
-                <button onclick="navigateTo('quan-tri')" class="text-gray-400 hover:text-white" title="Quản trị (Sếp Only)">
-                    <i class="fas fa-cogs"></i>
-                </button>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-2xl text-white focus:outline-none" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu">
-            <a onclick="navigateTo('index')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Trang chủ</a>
-            <a onclick="navigateTo('gioi-thieu')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Giới thiệu</a>
-            <a onclick="navigateTo('nien-bieu')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Niên biểu</a>
-            <a onclick="navigateTo('nhan-vat')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Nhân vật</a>
-            <a onclick="navigateTo('su-kien')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Sự kiện</a>
-            <a onclick="navigateTo('tai-nguyen')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Tài nguyên</a>
-            <a onclick="navigateTo('xep-hang')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Bảng vàng</a>
-            <a onclick="navigateTo('trac-nghiem')" class="block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-white">Trắc nghiệm</a>
-            <div class="border-t border-gray-700 mt-2 pt-2 px-4">
-                <button onclick="openModal()" class="w-full text-left py-2 text-yellow-400 font-bold">Đăng nhập</button>
-                <button onclick="openRegisterModal()" class="w-full text-left py-2 text-white font-bold">Đăng ký</button>
-            </div>
+            <button id="mobile-menu-button" class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Mobile Overlay -->
     <div id="mobile-overlay" onclick="closeMobileMenu()"></div>
 
-    <!-- MAIN CONTENT -->
-    <main class="container mx-auto px-4 pb-12 relative min-h-screen">
-        <!-- GIOI-THIEU SECTION -->
-        <section id="gioi-thieu" class="section-content active">
-            <h2 class="text-4xl brand-font text-center text-blue-900 mb-6">Sứ Mệnh Của Chúng Tôi</h2>
-            <div class="max-w-3xl mx-auto glass-panel p-8 mb-10">
-                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    "Dân ta phải biết sử ta, cho tường gốc tích nước nhà Việt Nam". Website này được tạo ra không chỉ để học, mà để **cảm nhận** từng nhịp đập của lịch sử thông qua công nghệ AI và trải nghiệm tương tác.
-                </p>
-                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition">
-                    <div class="text-4xl text-blue-500 mb-4"><i class="fas fa-robot"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Trợ lý ảo AI</h3>
-                    <p class="text-gray-500">Hỏi đáp lịch sử 24/7, giải thích các sự kiện phức tạp bằng ngôn ngữ Gen Z.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-500 hover:shadow-xl transition">
-                    <div class="text-4xl text-red-500 mb-4"><i class="fas fa-vr-cardboard"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Bảo tàng 3D</h3>
-                    <p class="text-gray-500">Xem vật phẩm cổ, bản đồ chiến trận dưới dạng mô hình 3D sống động.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500 hover:shadow-xl transition">
-                    <div class="text-4xl text-yellow-500 mb-4"><i class="fas fa-scroll"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Kho tư liệu chuẩn</h3>
-                    <p class="text-gray-500">Tài liệu được biên soạn và kiểm duyệt kỹ lưỡng bởi các chuyên gia.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-400 py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <h4 class="text-white font-bold text-lg mb-2 brand-font">Sử Việt Hào Hùng</h4>
-            <p class="text-sm mb-4">Dự án cộng đồng tôn vinh lịch sử Việt Nam</p>
-            <div class="flex justify-center space-x-4 mb-4">
-                <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="hover:text-white"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <p class="text-xs">&copy; 2025 Copyright by Sếp & Gemini Dev Team.</p>
+    <nav id="mobile-menu">
+        <a onclick="navigateTo('gioi-thieu')"><i class="fas fa-info-circle"></i> Giới thiệu</a>
+        <a onclick="navigateTo('nien-bieu')"><i class="fas fa-calendar-alt"></i> Niên biểu</a>
+        <a onclick="navigateTo('nhan-vat')"><i class="fas fa-user-shield"></i> Nhân vật</a>
+        <a onclick="navigateTo('su-kien')"><i class="fas fa-flag"></i> Sự kiện</a>
+        <a onclick="navigateTo('tai-nguyen')"><i class="fas fa-file-alt"></i> Tài nguyên</a>
+        <a onclick="navigateTo('xep-hang')"><i class="fas fa-trophy"></i> Bảng vàng</a>
+        <a onclick="navigateTo('trac-nghiem')"><i class="fas fa-pen-nib"></i> Trắc nghiệm</a>
+        <a onclick="navigateTo('quan-tri')"><i class="fas fa-user-cog"></i> Quản trị</a>
+        <div class="mobile-auth-group">
+            <button class="btn-auth btn-login" onclick="openAuthModal('login')">Đăng nhập</button>
+            <button class="btn-auth btn-register" onclick="openAuthModal('register')">Đăng ký</button>
         </div>
+    </nav>
+    <div class="quote-hero">
+        <blockquote>
+            "DÂN TA PHẢI BIẾT SỬ TA,<br>
+            CHO TƯỜNG GỐC TÍCH NƯỚC NHÀ VIỆT NAM."
+            <span>– CHỦ TỊCH HỒ CHÍ MINH (1942) –</span>
+        </blockquote>
+    </div>
+
+    <section class="about-section">
+        <div class="container">
+            <h1 class="section-title">Học Sử không chỉ là ghi nhớ, mà là TRẢI NGHIỆM</h1>
+
+            <p>
+                Sếp có công nhận môn Sử thường bị coi là "khô khan, nặng nề"? Sử Việt Pro ra đời để đập tan định kiến
+                đó! Chúng em biến những con số vô hồn thành câu chuyện sống động.
+                <br>Lịch sử không chỉ là những con số hay sự kiện khô khan.
+                Đó là câu chuyện về cội nguồn, văn hóa và tinh thần bất khuất của dân tộc Việt Nam.
+            </p>
+            <p>
+                Tuy quan trọng, nhưng thực tế nhiều học sinh lại thấy Lịch sử khó nhớ,
+                nặng sự kiện và thiếu hứng thú khi học theo cách truyền thống.
+            </p>
+
+            <p>
+                <strong>Sử Việt Hào Hùng</strong> được xây dựng để thay đổi điều đó.
+                Website giúp học sinh THCS (lớp 6–9) học Lịch sử bằng cách trực quan,
+                dễ hiểu và có tương tác.
+            </p>
+
+            <div class="about-features">
+                <div class="feature-card">
+                    <i class="fas fa-brain" style="color:#3498db"></i>
+                    <h3>Trợ lý AI Thông Minh</h3>
+                    <p>Giải đáp mọi thắc mắc lịch sử nhanh, gọn, dễ hiểu.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-vr-cardboard" style="color:#9b59b6"></i>
+                    <h3>Trải Nghiệm Trực Quan</h3>
+                    <p>Hình ảnh, sơ đồ, dòng thời gian sinh động.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-award" style="color:#f1c40f"></i>
+                    <h3>Bảng Vàng Vinh Danh</h3>
+                    <p>Thi đua – xếp hạng – tạo động lực học tập.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-globe" style="color:#16a085"></i>
+                    <h3>Chuyển đổi số</h3>
+                    <p>Chiến lược quốc gia nhằm nâng cao chất lượng giáo dục, tạo cơ hội học tập bình đẳng cho mọi vùng miền.</p>
+                </div>
+            </div>
+
+            <p class="about-conclusion">
+                Chúng em tin rằng: khi Lịch sử được kể đúng cách,
+                học sinh sẽ không chỉ học để thi, mà còn học để hiểu và tự hào.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="logo">
+                    <span class="logo-text-top"><i class="fas fa-dragon"></i> Sử Việt</span>
+                    <span style="color: var(--accent-gold)">Hào Hùng</span>
+                </div>
+                <h4>Hệ thống kiểm tra trắc nghiệm Lịch sử Việt Nam</h4>
+                <p>Khám phá, học hỏi và tự hào về cội nguồn dân tộc Việt Nam qua những bài trắc nghiệm thú vị và bổ ích.
+                </p>
+                <p>Địa chỉ: 32 Nguyễn Như Đỗ - Phường Cẩm Lệ - TP. Đà Nẵng</p>
+                <p>Email: contact@suviethao hung.vn | SĐT: 0123 456 789</p>
+            </div>
+        </div>
+        <div class="copyright">© 2025 Sử Việt Hào Hùng. Thiết kế bởi Minh 9/1.</div>
     </footer>
 
-    <!-- MODAL ĐĂNG NHẬP -->
-    <div id="auth-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center overflow-auto bg-black bg-opacity-50">
-        <div class="modal-content bg-white w-full max-w-md mx-4 rounded-xl shadow-2xl overflow-hidden relative">
-            <button onclick="closeModal('auth-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-            <div class="p-8">
-                <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Đăng Nhập</h2>
-                <form>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Tên đăng nhập</label>
-                        <input type="text" class="custom-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="VD: QuangTrung_No1">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Mật khẩu</label>
-                        <input type="password" class="custom-input w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition-colors" placeholder="*********">
-                    </div>
-                    <button type="button" class="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-blue-800 transition">Đăng Nhập Ngay</button>
-                </form>
-                <p class="text-center text-sm text-gray-500 mt-4">Chưa có tài khoản? <a href="#" onclick="closeModal('auth-modal'); openRegisterModal();" class="text-blue-600 font-bold">Đăng ký</a></p>
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeAuthModal()">&times;</button>
+
+            <!-- LOGIN FORM -->
+            <div id="login-form">
+                <h2>Đăng Nhập</h2>
+                <input type="text" placeholder="Tên đăng nhập" class="auth-input">
+                <input type="password" placeholder="Mật khẩu" class="auth-input">
+                <button class="btn-auth btn-register" style="width:100%">THAM GIA</button>
+
+                <p class="auth-switch">
+                    Chưa có tài khoản?
+                    <a href="#" onclick="switchForm('reg')">Đăng ký ngay</a>
+                </p>
             </div>
+
+            <!-- REGISTER FORM -->
+            <div id="register-form" style="display:none">
+                <h2>Đăng Ký</h2>
+                <input type="text" placeholder="Tên người dùng" class="auth-input">
+                <input type="email" placeholder="Email" class="auth-input">
+                <input type="password" placeholder="Mật khẩu" class="auth-input">
+                <input type="password" placeholder="Nhập lại mật khẩu" class="auth-input">
+                <button class="btn-auth btn-register" style="width:100%">TẠO TÀI KHOẢN</button>
+
+                <p class="auth-switch">
+                    Đã có tài khoản?
+                    <a href="#" onclick="switchForm('login')">Đăng nhập ngay</a>
+                </p>
+            </div>
+
         </div>
     </div>
-
-    <!-- MODAL ĐĂNG KÝ -->
-    <div id="register-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center overflow-auto bg-black bg-opacity-50">
-        <div class="modal-content bg-white w-full max-w-md mx-4 rounded-xl shadow-2xl overflow-hidden relative">
-            <button onclick="closeModal('register-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-            <div class="p-8">
-                <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Đăng Ký</h2>
-                <form id="registerForm">
-                    <div class="input-group">
-                        <label>Tên hiển thị</label>
-                        <input type="text" placeholder="Ví dụ: Chiến Thần Sử Việt" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Email học sinh</label>
-                        <input type="email" placeholder="email@vi-du.com" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Mật khẩu</label>
-                        <input type="password" placeholder="Tối thiểu 6 ký tự..." required>
-                    </div>
-                    <button type="submit" class="auth-submit btn-reg-submit">TẠO TÀI KHOẢN</button>
-                </form>
-                <p class="text-center text-sm text-gray-500 mt-4">Đã có tài khoản? <a href="#" onclick="closeModal('register-modal'); openModal();" class="text-blue-600 font-bold">Đăng nhập</a></p>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN.JS -->
     <script src="main.js"></script>
 </body>
+
 </html>

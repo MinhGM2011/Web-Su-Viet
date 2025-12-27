@@ -63,16 +63,44 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     white-space: nowrap;
+    margin-left: -55px;
+    max-width: 70%;
 }
 
-.logo span {
+.logo-text-top {
+    background: linear-gradient(90deg,
+            #ff0000 0%,
+            #ff8838 40%,
+            #f1c40f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo-text-bottom {
     color: var(--accent-gold);
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 nav.desktop-nav {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -81,7 +109,7 @@ nav.desktop-nav {
     font-weight: 500;
     font-size: 17px;
     position: relative;
-    padding: 12px 18px;
+    padding: 8px 12px;
     cursor: pointer;
     transition: 0.3s ease;
     border-radius: 10px;
@@ -136,17 +164,76 @@ nav.desktop-nav {
     background: transparent;
     border: 2px solid var(--accent-gold) !important;
     color: var(--accent-gold);
+    animation: softPulse 4s infinite;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #ff5a3c, #ff7a3d);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+
+    padding: 12px 20px;
+    border-radius: 999px; /* pill button */
+    border: none;
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(255, 90, 60, 0.45);
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-register {
     background: var(--danger-red);
     color: white;
+    animation: softPulse 2.8s infinite;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-register:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
 }
+
+/* ánh sáng quét nhẹ */
+.btn-register::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    animation: shine 2.5s linear infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+
+.btn-register:hover::before {
+    left: 100%;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(255, 90, 60, 0.6);
+}
+
 
 /* --- 2. HERO SECTION (FIX LỖI HIỂN THỊ) --- */
 .hero-section {
@@ -289,7 +376,7 @@ footer {
     background: var(--primary-navy);
     color: white;
     padding: 60px 0 20px;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .footer-content {
@@ -459,6 +546,7 @@ footer {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
+
 #mobile-menu::-webkit-scrollbar {
     width: 0;
 }
@@ -485,9 +573,11 @@ footer {
 .mobile-toggle span:nth-child(1) {
     top: 0;
 }
+
 .mobile-toggle span:nth-child(2) {
     top: 9px;
 }
+
 .mobile-toggle span:nth-child(3) {
     top: 18px;
 }
@@ -588,5 +678,55 @@ footer {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px; /* 🔥 TÁCH NÚT RA */
+    gap: 12px;
+    /* 🔥 TÁCH NÚT RA */
+}
+
+@keyframes softPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.6);
+    }
+
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 0 0 8px rgba(241, 196, 15, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(241, 196, 15, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.1;
+        margin-left: -10px;
+    }
+
+    header {
+        background-color: var(--primary-navy);
+        color: var(--text-light);
+        position: sticky;
+        top: 0;
+        z-index: 3000;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text-top {
+        font-size: 1.5rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .logo-text-bottom {
+        font-size: 1.5rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
 }
