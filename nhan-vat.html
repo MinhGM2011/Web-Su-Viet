@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sử Việt Hào Hùng - Nhân vật</title>
     <!-- Font chữ Google: Merriweather cho cảm giác lịch sử, Roboto cho hiện đại -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
     <!-- Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Common CSS -->
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="nhan-vat.css">
 </head>
+
 <body class="page-nhan-vat">
 
-   <header>
+    <header>
         <div class="container header-content">
             <div class="logo" onclick="navigateTo('index')">
                 <span class="logo-text-top"><i class="fas fa-dragon"></i> Sử Việt</span>
@@ -65,74 +68,132 @@
     <main class="relative min-h-screen">
         <section id="nhan-vat" class="section-content active nhan-vat-dark">
 
-    <!-- TIÊU ĐỀ -->
-    <div class="nhan-vat-header">
-        <h2 class="brand-font">Danh Nhân Chiến Tích</h2>
-        <p>Những người con ưu tú đã viết nên trang sử vàng dân tộc</p>
+            <!-- TIÊU ĐỀ -->
+            <div class="nhan-vat-header">
+                <h2 class="brand-font">Danh Nhân Chiến Tích</h2>
+                <p>Những người con ưu tú đã viết nên trang sử vàng dân tộc</p>
 
-        <div class="search-wrapper">
-            <input
-                type="text"
-                id="heroSearch"
-                placeholder="Tìm kiếm anh hùng..."
-                class="search-box"
-            >
-        </div>
-    </div>
-
-    <!-- GRID -->
-    <div class="char-grid">
-
-        <div class="hero-card">
-            <span class="hero-badge">HUYỀN THOẠI</span>
-            <img src="Ngô Quyền.png">
-            <div class="card-overlay">
-                <h3 class="hero-name brand-font">Ngô Quyền</h3>
-                <p class="hero-title">Tiền Ngô Vương</p>
-                <p class="hero-desc">
-                    Người chỉ huy đại thắng Bạch Đằng năm 938, chấm dứt 1000 năm Bắc thuộc.
-                </p>
+                <div class="search-wrapper">
+                    <input type="text" id="heroSearch" placeholder="Tìm kiếm anh hùng..." class="search-box">
+                </div>
             </div>
-        </div>
 
-        <div class="hero-card">
-            <span class="hero-badge">HUYỀN THOẠI</span>
-                <img src="Trần Hưng Đạo.png">
-            <div class="card-overlay">
-                <h3 class="hero-name brand-font">Trần Quốc Tuấn</h3>
-                <p class="hero-title">Hưng Đạo Đại Vương</p>
-                <p class="hero-desc">
-                    Nhà quân sự thiên tài, tác giả Hịch Tướng Sĩ, ba lần đại phá quân Nguyên Mông.
-                </p>
+            <!-- GRID -->
+            <div class="char-grid">
+
+                <div class="hero-card">
+                    <span class="hero-badge">HUYỀN THOẠI VĨ ĐẠI</span>
+                    <img src="Bác Hồ.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Hồ Chí Minh</h3>
+                        <p class="hero-title">Bác Hồ Kính Yêu</p>
+                        <p class="hero-desc">
+                            Anh hùng giải phóng dân tộc, Danh nhân văn hóa thế giới, người đã cống hiến cả cuộc đời cho
+                            độc lập, tự do của Tổ quốc.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">HUYỀN THOẠI</span>
+                    <img src="Ngô Quyền.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Ngô Quyền</h3>
+                        <p class="hero-title">Tiền Ngô Vương</p>
+                        <p class="hero-desc">
+                            Người chỉ huy đại thắng Bạch Đằng năm 938, chấm dứt 1000 năm Bắc thuộc.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">HUYỀN THOẠI</span>
+                    <img src="Trần Hưng Đạo.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Trần Quốc Tuấn</h3>
+                        <p class="hero-title">Hưng Đạo Đại Vương</p>
+                        <p class="hero-desc">
+                            Nhà quân sự thiên tài, tác giả Hịch Tướng Sĩ, ba lần đại phá quân Nguyên Mông.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">HUYỀN THOẠI</span>
+                    <img src="Quang Trung.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Quang Trung</h3>
+                        <p class="hero-title">Nguyễn Huệ</p>
+                        <p class="hero-desc">
+                            Hoàng đế bách chiến bách thắng, đánh tan 29 vạn quân Thanh chỉ trong 5 ngày.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">DANH TƯỚNG</span>
+                    <img src="Võ Nguyên Giáp.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Võ Nguyên Giáp</h3>
+                        <p class="hero-title">Đại tướng Tổng Tư lệnh</p>
+                        <p class="hero-desc">
+                            Người anh cả của Quân Đội Nhân Dân Việt Nam, lừng danh với chiến thắng Điện Biên Phủ.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">THÁNH QUÂN</span>
+                    <img src="Lê Lợi.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Lê Lợi</h3>
+                        <p class="hero-title">Lê Thái Tổ</p>
+                        <p class="hero-desc">
+                            Lãnh tụ cuộc khởi nghĩa Lam Sơn ròng rã 10 năm, quét sạch quân Minh, khai sáng vương triều
+                            Hậu Lê rực rỡ.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">HUYỀN THOẠI</span>
+                    <img src="Hai Bà Trưng.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Hai Bà Trưng</h3>
+                        <p class="hero-title">Trưng Trắc và Trưng Nhị</p>
+                        <p class="hero-desc">
+                            Những nữ anh hùng đầu tiên phất cờ lãnh đạo cuộc khởi nghĩa chống lại ách đô hộ của nhà Hán.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">DANH TƯỚNG</span>
+                    <img src="Võ Thị Sáu.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Võ Thị Sáu</h3>
+                        <p class="hero-title">Nữ Anh Hùng Đất Đỏ</p>
+                        <p class="hero-desc">
+                            Người con gái trẻ trung bất khuất, biểu tượng của tinh thần kiên cường chống Pháp.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <span class="hero-badge">DANH TƯỚNG</span>
+                    <img src="Lý Thường Kiệt.png">
+                    <div class="card-overlay">
+                        <h3 class="hero-name brand-font">Lý Thường Kiệt</h3>
+                        <p class="hero-title">Thái Úy</p>
+                        <p class="hero-desc">
+                            Bậc đại danh tướng thời Lý, người viết nên bản Tuyên ngôn Độc lập đầu tiên "Nam Quốc Sơn Hà"
+                            và đại phá quân Tống.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-        </div>
-
-        <div class="hero-card">
-            <span class="hero-badge">HUYỀN THOẠI</span>
-            <img src="Quang Trung.png">
-            <div class="card-overlay">
-                <h3 class="hero-name brand-font">Quang Trung</h3>
-                <p class="hero-title">Nguyễn Huệ</p>
-                <p class="hero-desc">
-                    Hoàng đế bách chiến bách thắng, đánh tan 29 vạn quân Thanh chỉ trong 5 ngày.
-                </p>
-            </div>
-        </div>
-
-        <div class="hero-card">
-            <span class="hero-badge">DANH TƯỚNG</span>
-            <img src="Võ Nguyên Giáp.png">
-            <div class="card-overlay">
-                <h3 class="hero-name brand-font">Võ Nguyên Giáp</h3>
-                <p class="hero-title">Đại tướng Tổng Tư lệnh</p>
-                <p class="hero-desc">
-                    Người anh cả của QĐNDVN, lừng danh với chiến thắng Điện Biên Phủ.
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
+        </section>
 
     </main>
 
@@ -188,21 +249,22 @@
         </div>
     </div>
     <!-- MAIN.JS -->
-    
+
     <script src="main.js"></script>
     <script>
-    const searchInput = document.getElementById('heroSearch');
-    const cards = document.querySelectorAll('.hero-card');
+        const searchInput = document.getElementById('heroSearch');
+        const cards = document.querySelectorAll('.hero-card');
 
-    searchInput.addEventListener('input', () => {
-        const keyword = searchInput.value.toLowerCase();
+        searchInput.addEventListener('input', () => {
+            const keyword = searchInput.value.toLowerCase();
 
-        cards.forEach(card => {
-            const name = card.querySelector('.hero-name').innerText.toLowerCase();
-            card.style.display = name.includes(keyword) ? 'block' : 'none';
+            cards.forEach(card => {
+                const name = card.querySelector('.hero-name').innerText.toLowerCase();
+                card.style.display = name.includes(keyword) ? 'block' : 'none';
+            });
         });
-    });
 
     </script>
 </body>
+
 </html>

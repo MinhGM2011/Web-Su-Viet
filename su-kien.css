@@ -1,0 +1,433 @@
+/* =========================
+   SU KIEN PAGE
+========================= */
+
+.su-kien-page {
+    background: #fdfcf0;
+    padding-bottom: 80px;
+}
+
+.brand-font {
+    font-family: 'Merriweather', serif;
+}
+
+/* ===== BANNER ===== */
+.event-banner {
+    height: 320px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("https://vcdn1-vnexpress.vnecdn.net/2021/04/14/den-hung-1-1618388481.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.event-banner-content h1 {
+    color: #ffd700;
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow:
+        0 2px 0 #000,
+        0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+.event-banner-content p {
+    color: #eee;
+    font-style: italic;
+    font-size: 18px;
+}
+
+/* ===== EVENT LIST ===== */
+.event-list {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .event-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .event-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== EVENT CARD ===== */
+.event-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: none; /* ❌ bỏ luôn */
+    transition: transform 0.35s ease;
+}
+
+
+.event-card:hover {
+    transform: translateY(-6px);
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 25px rgba(229, 45, 45, 0.18);
+}
+
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+/* flip-inner chỉ lo việc lật */
+.flip-inner {
+    transition: transform 0.8s ease;
+    box-shadow: none;
+}
+
+
+.event-card:hover .event-img {
+    transform: scale(1.1);
+}
+
+
+.event-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* hoặc 4/3 nếu Sếp thích */
+    object-fit: cover;      /* 🔥 HẾT TRẮNG */
+    display: block;
+    border-radius: 18px 18px 0 0;
+}
+
+
+/* ===== BODY ===== */
+.event-body {
+    padding: 20px;
+}
+
+.event-date {
+    background: #8b0000;
+    color: white;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 0 20px 20px 0;
+    display: inline-block;
+    margin-top: -35px;
+    margin-bottom: 15px;
+}
+
+.event-body h3 {
+    font-size: 22px;
+    color: #8b0000;
+    margin-bottom: 10px;
+}
+
+.event-body p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.event-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #e31a1a;
+    cursor: pointer;
+}
+
+.event-btn:hover {
+    text-decoration: underline;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+    .event-banner {
+        height: 220px;
+    }
+
+    .event-banner-content h1 {
+        font-size: 34px;
+    }
+}
+
+.flip-card {
+    perspective: 1200px;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    border-radius: 16px;
+}
+
+.flip-front,
+.flip-back {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.flip-front {
+    background: #fff;
+}
+
+.front-info {
+    padding: 20px;
+}
+
+.event-year {
+    background: #8b0000;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 0 20px 20px 0;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.flip-back {
+    background: #111;
+    color: #eee;
+    transform: rotateY(180deg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flip-back h4 {
+    color: #ffd700;
+    margin-bottom: 12px;
+}
+
+.flip-back ul {
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flip-back li {
+    margin-bottom: 10px;
+}
+
+
+.event-card:hover .event-img {
+    transform: scale(1.1);
+}
+
+.flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    height: 100%;
+    min-height: 380px;
+}
+
+.detail-btn {
+    background: transparent;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.detail-btn:active {
+    transform: scale(0.95);
+}
+
+
+.event-card.is-flipped {
+    box-shadow: none;
+    transform: none;
+}
+
+.event-card.is-flipped:hover {
+    box-shadow: none;
+    transition: none;
+    transform: none;
+}
+
+.event-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.28);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.event-card::after {
+    border: 1px solid rgba(255, 200, 80, 0.35);
+}
+
+.view-detail {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.brand-font {
+    font-family: 'Merriweather', serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #8b0000; /* blood red */
+    margin: 12px 0 8px;
+}
+.su-kien-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(139, 0, 0, 0.35);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.su-kien-btn {
+    margin-top: 12px;
+    background: transparent;
+    border: none;
+    color: #df3131;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.su-kien-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* Card cha */
+.flip-card {
+    perspective: 1200px;
+}
+
+/* Khối lật */
+.flip-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+/* 2 mặt */
+.flip-front,
+.flip-back {
+    backface-visibility: hidden;
+    border-radius: 18px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Mặt trước */
+.flip-front {
+    background: #fff;
+}
+
+/* Ảnh */
+.event-img {
+    width: 100%;
+    height: auto;           /* 🔥 TỰ CAO THEO ẢNH */
+    display: block;
+    object-fit: contain;    /* không cắt */
+    background: #000;
+}
+
+/* Nội dung */
+.front-info {
+    padding: 20px;
+}
+
+/* Mặt sau */
+.flip-back {
+    position: absolute;
+    inset: 0;
+    background: #111;
+    color: #eee;
+    transform: rotateY(180deg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Trạng thái lật */
+.flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* CARD CHA */
+.flip-card {
+    perspective: 1200px;
+    height: 100%;
+    min-height: 420px;
+}
+
+/* KHỐI LẬT */
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+/* 2 MẶT */
+.flip-front,
+.flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* MẶT TRƯỚC */
+.flip-front {
+    background: #fff;
+}
+
+/* ẢNH – BẢN NGUYÊN MẪU */
+.event-img {
+    width: 100%;
+    height: 220px;          /* 🔥 CỐ ĐỊNH */
+    object-fit: cover;      /* 🔥 CROP NHẸ CHO ĐẸP */
+    display: block;
+}
+
+/* MẶT SAU */
+.flip-back {
+    background: #111;
+    color: #eee;
+    transform: rotateY(180deg);
+    padding: 24px;
+}
+
+/* TRẠNG THÁI LẬT */
+.flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+}
