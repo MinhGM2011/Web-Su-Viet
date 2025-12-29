@@ -431,3 +431,39 @@
 .flip-card.is-flipped .flip-inner {
     transform: rotateY(180deg);
 }
+
+.flip-back {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.75)
+        ),
+        url("trong-dong.jpg"); /* ảnh nền chung */
+    background-size: cover;
+    background-position: center;
+}
+
+.flip-back {
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.flip-back ul {
+    line-height: 1.9;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flip-back li {
+    position: relative;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.flip-back li::before {
+    content: "◆";
+    color: #ffd700;
+    margin-right: 8px;
+}
