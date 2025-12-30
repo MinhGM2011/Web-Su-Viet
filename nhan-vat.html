@@ -33,7 +33,7 @@
                 <a onclick="navigateTo('xep-hang')" class="nav-link">Bảng vàng</a>
                 <a onclick="navigateTo('trac-nghiem')" class="nav-link">Trắc nghiệm</a>
                 <a onclick="navigateTo('quan-tri')" class="nav-link">Quản trị</a>
-                <div class="auth-btns">
+                <div class="auth-btns" id="auth-area">
                     <button class="btn-auth btn-login" onclick="openAuthModal('login')">Đăng nhập</button>
                     <button class="btn-auth btn-register" onclick="openAuthModal('register')">Đăng ký</button>
                 </div>
@@ -56,7 +56,7 @@
         <a onclick="navigateTo('xep-hang')"><i class="fas fa-trophy"></i> Bảng vàng</a>
         <a onclick="navigateTo('trac-nghiem')"><i class="fas fa-pen-nib"></i> Trắc nghiệm</a>
         <a onclick="navigateTo('quan-tri')"><i class="fas fa-user-cog"></i> Quản trị</a>
-        <div class="mobile-auth-group">
+        <div class="mobile-auth-group" id="mobile-auth-area">
             <button class="btn-auth btn-login" onclick="openAuthModal('login')">Đăng nhập</button>
             <button class="btn-auth btn-register" onclick="openAuthModal('register')">Đăng ký</button>
         </div>
@@ -234,11 +234,15 @@
             <!-- REGISTER FORM -->
             <div id="register-form" style="display:none">
                 <h2>Đăng Ký</h2>
-                <input type="text" placeholder="Tên người dùng" class="auth-input">
-                <input type="email" placeholder="Email" class="auth-input">
-                <input type="password" placeholder="Mật khẩu" class="auth-input">
-                <input type="password" placeholder="Nhập lại mật khẩu" class="auth-input">
-                <button class="btn-auth btn-register" style="width:100%">TẠO TÀI KHOẢN</button>
+
+                <input id="reg-username" type="text" placeholder="Tên đăng nhập" class="auth-input">
+                <input id="reg-fullname" type="text" placeholder="Họ và tên" class="auth-input">
+                <input id="reg-class" type="text" placeholder="Lớp (VD: 9/1)" class="auth-input">
+                <input id="reg-password" type="password" placeholder="Mật khẩu" class="auth-input">
+                <input id="reg-password2" type="password" placeholder="Nhập lại mật khẩu" class="auth-input">
+
+                <button class="btn-auth btn-register" style="width:100%" onclick="handleRegister()">TẠO TÀI
+                    KHOẢN</button>
 
                 <p class="auth-switch">
                     Đã có tài khoản?
