@@ -152,8 +152,11 @@ function showToast(msg, type = "success") {
 function logout() {
   localStorage.clear();
   showToast("Đã đăng xuất 👋", "success");
-  setTimeout(() => location.reload(), 800);
+  setTimeout(() => {
+    window.location.replace("index.html");
+  }, 800);
 }
+
 function updateAuthUI() {
   const isLogin = localStorage.getItem("login") === "true";
   const fullname = localStorage.getItem("fullname");
